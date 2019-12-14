@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-01 02:33+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: corelli/templates/account/account_inactive.html:5
+#: corelli/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr "Cuenta inactiva"
+
+#: corelli/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr "Esta cuenta está inactiva."
+
+#: corelli/templates/account/email.html:7
+msgid "Account"
+msgstr "Cuenta"
+
+#: corelli/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr "Direcciones de e-mail"
+
+#: corelli/templates/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr "Las siguientes direcciones de e-mail están asociadas con su cuenta:"
+
+#: corelli/templates/account/email.html:27
+msgid "Verified"
+msgstr "Verificación completada"
+
+#: corelli/templates/account/email.html:29
+msgid "Unverified"
+msgstr "Verificación incompleta"
+
+#: corelli/templates/account/email.html:31
+msgid "Primary"
+msgstr "Principal"
+
+#: corelli/templates/account/email.html:37
+msgid "Make Primary"
+msgstr "Hacer principal"
+
+#: corelli/templates/account/email.html:38
+msgid "Re-send Verification"
+msgstr "Reenviar verificación"
+
+#: corelli/templates/account/email.html:39
+msgid "Remove"
+msgstr "Quitar"
+
+#: corelli/templates/account/email.html:46
+msgid "Warning:"
+msgstr "Aviso:"
+
+#: corelli/templates/account/email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+"Actualmente no tiene dirección de e-mail configurada. Debe añadir una "
+"dirección de e-mail para poder recibir notificaciones, restablecer su "
+"contraseña, etc."
+
+#: corelli/templates/account/email.html:51
+msgid "Add E-mail Address"
+msgstr "Añadir dirección de e-mail"
+
+#: corelli/templates/account/email.html:56
+msgid "Add E-mail"
+msgstr "Añadir e-mail"
+
+#: corelli/templates/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr "¿Está seguro de que quiere quitar la dirección de e-mail seleccionada?"
+
+#: corelli/templates/account/email_confirm.html:6
+#: corelli/templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr "Confirmar dirección de e-mail"
+
+#: corelli/templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"Por favor, confirme que  <a href=\"mailto:%(email)s\">%(email)s</a> es una "
+"dirección de e-mail para el usuario %(user_display)s."
+
+#: corelli/templates/account/email_confirm.html:20
+msgid "Confirm"
+msgstr "Confirmar"
+
+#: corelli/templates/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"Este enlace de confirmación de e-mail expiró o es inválido. Por favor <a "
+"href=\"%(email_url)s\">realice una nueva solicitud de confirmación de e-"
+"mail</a>."
+
+#: corelli/templates/account/login.html:7
+#: corelli/templates/account/login.html:11
+#: corelli/templates/account/login.html:44 corelli/templates/base.html:69
+msgid "Sign In"
+msgstr "Ingresar"
+
+#: corelli/templates/account/login.html:16
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+"Por favor, ingrese con una\n"
+"de sus cuentas existentes de terceros. O, <a href=\"%(signup_url)s"
+"\">regístre</a>\n"
+"una cuenta en %(site_name)s e ingrese debajo:"
+
+#: corelli/templates/account/login.html:26
+msgid "or"
+msgstr "o"
+
+#: corelli/templates/account/login.html:33
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+"Si no ha creado una cuenta aún, entonces\n"
+"<a href=\"%(signup_url)s\">regístrese</a> primero, por favor."
+
+#: corelli/templates/account/login.html:43
+msgid "Forgot Password?"
+msgstr "¿Olvidó su contraseña?"
+
+#: corelli/templates/account/logout.html:5
+#: corelli/templates/account/logout.html:8
+#: corelli/templates/account/logout.html:17 corelli/templates/base.html:60
+msgid "Sign Out"
+msgstr "Desconectar"
+
+#: corelli/templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr "¿Está seguro de que quiere desconectar?"
+
+#: corelli/templates/account/password_change.html:6
+#: corelli/templates/account/password_change.html:9
+#: corelli/templates/account/password_change.html:14
+#: corelli/templates/account/password_reset_from_key.html:5
+#: corelli/templates/account/password_reset_from_key.html:8
+#: corelli/templates/account/password_reset_from_key_done.html:4
+#: corelli/templates/account/password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr "Cambiar contraseña"
+
+#: corelli/templates/account/password_reset.html:7
+#: corelli/templates/account/password_reset.html:11
+#: corelli/templates/account/password_reset_done.html:6
+#: corelli/templates/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr "Restablecimiento de contraseña"
+
+#: corelli/templates/account/password_reset.html:16
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+"¿Olvidó su contraseña? Introduzca su dirección de e-mail debajo y le "
+"enviaremos un e-mail para que la restablezca."
+
+#: corelli/templates/account/password_reset.html:21
+msgid "Reset My Password"
+msgstr "Restablecer mi contraseña"
+
+#: corelli/templates/account/password_reset.html:24
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+"Por favor, contacte con nosotros si tiene cualquier problema restableciendo "
+"su contraseña."
+
+#: corelli/templates/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Le hemos enviado un e-mail. Por favor, contáctenos si no lo recibe en breves "
+"minutos."
+
+#: corelli/templates/account/password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr "Código incorrecto"
+
+#: corelli/templates/account/password_reset_from_key.html:12
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+"El enlace de restablecimiento de contraseña es inválido, posiblemente porque "
+"ya ha sido usado. Por favor solicite un  <a href=\"%(passwd_reset_url)s"
+"\">nuevo restablecimiento de contraseña</a>."
+
+#: corelli/templates/account/password_reset_from_key.html:18
+msgid "change password"
+msgstr "cambiar contraseña"
+
+#: corelli/templates/account/password_reset_from_key.html:21
+#: corelli/templates/account/password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr "Su contraseña ya ha sido cambiada."
+
+#: corelli/templates/account/password_set.html:6
+#: corelli/templates/account/password_set.html:9
+#: corelli/templates/account/password_set.html:14
+msgid "Set Password"
+msgstr "Establecer contraseña"
+
+#: corelli/templates/account/signup.html:6
+msgid "Signup"
+msgstr "Registrarse"
+
+#: corelli/templates/account/signup.html:9
+#: corelli/templates/account/signup.html:19 corelli/templates/base.html:65
+msgid "Sign Up"
+msgstr "Registrarse"
+
+#: corelli/templates/account/signup.html:11
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+"¿Ya tiene una cuenta? Entonces por favor <a href=\"%(login_url)s\">ingrese</"
+"a>."
+
+#: corelli/templates/account/signup_closed.html:5
+#: corelli/templates/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr "Registro inhabilitado"
+
+#: corelli/templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr "Lo sentimos, pero el registro está actualmente inhabilitado."
+
+#: corelli/templates/account/verification_sent.html:5
+#: corelli/templates/account/verification_sent.html:8
+#: corelli/templates/account/verified_email_required.html:5
+#: corelli/templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr "Verificar su dirección de e-mail"
+
+#: corelli/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+"Le hemos enviado un e-mail para su verificación. Siga el enlace provisto "
+"para finalizar el proceso de registro. Por favor, contactenos si no lo "
+"recibe en breves minutos."
+
+#: corelli/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+"Esta parte del sitio web requiere que verifiquemos que\n"
+"usted es quien dice ser. Para este propósito, necesitamos que\n"
+"verifique la propiedad de la dirección de e-mail. "
+
+#: corelli/templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+"Le hemos enviado un e-mail para la\n"
+"verificación. Por favor, haga click en el enlace incluido en el e-mail. Por "
+"favor\n"
+"contáctenos si no lo recibe en breves minutos."
+
+#: corelli/templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+"<strong>Nota:</strong> aún puede  <a href=\"%(email_url)s\">cambiar su "
+"dirección de e-mail</a>."
+
+#: corelli/templates/base.html:56
+msgid "My Profile"
+msgstr "Mi perfil"
+
+#: corelli/templates/language_selector.html:16
+msgid "Accept"
+msgstr "Aceptar"
+
+#: corelli/users/apps.py:7
+msgid "Users"
+msgstr "Usuarios"
+
+#: corelli/users/forms.py:16
+msgid "This username has already been taken."
+msgstr "Este nombre de usuario ya está en uso."
+
+#: corelli/users/models.py:11
+msgid "Name of User"
+msgstr "Nombre del usuario"
+
+#: corelli/users/views.py:34
+msgid "Infos successfully updated"
+msgstr "Información actualizada con éxito"
