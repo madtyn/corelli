@@ -15,6 +15,8 @@ urlpatterns = i18n_patterns(*[
     path(settings.ADMIN_URL, admin.site.urls),
     # User management
     path("users/", include("corelli.users.urls", namespace="users")),
+
+    # This relies on the 'django-allauth' pip3 package
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 
