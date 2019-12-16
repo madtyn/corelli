@@ -1,1 +1,11 @@
 {% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <p>{% blocktrans %} This web site is a musical personal project for sharing sheet music and resources for musicians.
+        I made it because I enjoy collecting sheet music and I always have believed that culture should be shared and enjoyed.
+
+        If you think like that, you will love this web site and its goal, so welcome. I hope you will find what you were
+        looking for.
+    {% endblocktrans %}</p>
+{% endblock content %}

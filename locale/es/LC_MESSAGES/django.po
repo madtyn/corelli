@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-01 02:33+0100\n"
+"POT-Creation-Date: 2019-12-16 23:08+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,7 +118,7 @@ msgstr ""
 
 #: corelli/templates/account/login.html:7
 #: corelli/templates/account/login.html:11
-#: corelli/templates/account/login.html:44 corelli/templates/base.html:69
+#: corelli/templates/account/login.html:44 corelli/templates/base.html:72
 msgid "Sign In"
 msgstr "Ingresar"
 
@@ -154,7 +154,7 @@ msgstr "¿Olvidó su contraseña?"
 
 #: corelli/templates/account/logout.html:5
 #: corelli/templates/account/logout.html:8
-#: corelli/templates/account/logout.html:17 corelli/templates/base.html:60
+#: corelli/templates/account/logout.html:17 corelli/templates/base.html:63
 msgid "Sign Out"
 msgstr "Desconectar"
 
@@ -240,7 +240,7 @@ msgid "Signup"
 msgstr "Registrarse"
 
 #: corelli/templates/account/signup.html:9
-#: corelli/templates/account/signup.html:19 corelli/templates/base.html:65
+#: corelli/templates/account/signup.html:19 corelli/templates/base.html:68
 msgid "Sign Up"
 msgstr "Registrarse"
 
@@ -308,7 +308,15 @@ msgstr ""
 "<strong>Nota:</strong> aún puede  <a href=\"%(email_url)s\">cambiar su "
 "dirección de e-mail</a>."
 
-#: corelli/templates/base.html:56
+#: corelli/templates/base.html:48
+msgid "Home"
+msgstr "Inicio"
+
+#: corelli/templates/base.html:51
+msgid "About"
+msgstr "Qué es esto"
+
+#: corelli/templates/base.html:59
 msgid "My Profile"
 msgstr "Mi perfil"
 
@@ -316,6 +324,23 @@ msgstr "Mi perfil"
 msgid "Accept"
 msgstr "Aceptar"
 
+#: corelli/templates/pages/about.html:4
+msgid ""
+" This web site is a musical personal project for sharing sheet music and "
+"resources for musicians.\n"
+"    I made it because I enjoy collecting sheet music and I always have "
+"believed that culture should be shared and enjoyed.\n"
+"\n"
+"    If you think like that, you will love this web site and its goal, so "
+"welcome. I hope you will find what you were\n"
+"    looking for.\n"
+msgstr "Este sitio web es un proyecto musical y personal para compartir partituras y "
+"recursos para músicos.\n"
+"   Fue creado porque soy aficionado a coleccionar partituras y siempre he "
+"creido que la cultura debe ser compartida y disfrutada.\n"
+"\n"
+"   Si piensas de este modo, te encantará esta web y su objetivo, "
+"así que bienvenido. Espero que encuentres lo que buscas.\n"
 #: corelli/users/apps.py:7
 msgid "Users"
 msgstr "Usuarios"
