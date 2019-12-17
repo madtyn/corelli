@@ -732,6 +732,7 @@ GRANT ALL ON DATABASE corelli TO corellidev;
 GRANT ALL ON TABLE public.django_migrations TO corellidev;
 GRANT ALL ON TABLE public.django_session TO corellidev;
 GRANT ALL ON TABLE public.django_site TO corellidev;
+GRANT ALL ON TABLE users_user TO corellidev;
 
 
 --
