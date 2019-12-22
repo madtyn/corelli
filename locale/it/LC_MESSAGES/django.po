@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-16 23:08+0100\n"
+"POT-Creation-Date: 2019-12-16 23:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -312,6 +312,10 @@ msgstr "Inizio"
 msgid "About"
 msgstr "Cosa è questo"
 
+#: corelli/templates/base.html:55
+msgid "Browse"
+msgstr "Ricercare"
+
 #: corelli/templates/base.html:59
 msgid "My Profile"
 msgstr "Profilo"
@@ -320,17 +324,24 @@ msgstr "Profilo"
 msgid "Accept"
 msgstr "Accetare"
 
-#: corelli/templates/pages/about.html:4
+#: corelli/templates/pages/about.html:5
 msgid ""
 " This web site is a musical personal project for sharing sheet music and "
 "resources for musicians.\n"
-"    I made it because I enjoy collecting sheet music and I always have "
+"        I made it because I enjoy collecting sheet music and I always have "
 "believed that culture should be shared and enjoyed.\n"
 "\n"
-"    If you think like that, you will love this web site and its goal, so "
+"        If you think like that, you will love this web site and its goal, so "
 "welcome. I hope you will find what you were\n"
-"    looking for.\n"
+"        looking for.\n"
+"    "
 msgstr ""
+" Questo sito web è un progetto musicale e personale per condividere spartiti "
+"e risorse per musicisti.\n"
+"       Ho fatto questo perché amo collezionare spartiti musicali e ho sempre "
+"creduto che la cultura dovrebbe essere condivisa e goduta.\n"
+"   Se la pensi così, amerai questo sito web e il suo obiettivo, quindi benvenuto. "
+"Spero che troverai quello che eri ricercando."
 
 #: corelli/users/apps.py:7
 msgid "Users"

@@ -20,6 +20,9 @@ urlpatterns = i18n_patterns(*[
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 
+    path("browse/", include("django_sftpbrowser.urls", namespace="sftpbrowser-root")),
+    path("browse/<path:input_path>", include("django_sftpbrowser.urls", namespace="sftpbrowser-resource")),
+
     # i18n:  sets a user’s language preference and redirects to a given URL
     # or, by default, back to the previous page
     path("i18n/", include('django.conf.urls.i18n')),
