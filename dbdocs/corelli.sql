@@ -733,6 +733,11 @@ GRANT ALL ON TABLE public.django_migrations TO corellidev;
 GRANT ALL ON TABLE public.django_session TO corellidev;
 GRANT ALL ON TABLE public.django_site TO corellidev;
 GRANT ALL ON TABLE users_user TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE account_emailaddress TO corellidev;
+GRANT ALL PRIVILEGES ON users_user_id_seq TO corellidev;
+GRANT ALL PRIVILEGES ON account_emailaddress_id_seq TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE django_admin_log TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE django_content_type TO corellidev;
 
 
 --
