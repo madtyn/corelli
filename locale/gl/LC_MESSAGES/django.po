@@ -343,6 +343,8 @@ msgstr ""
 "\n"
 "   Se pensas deste xeito, encantarache esta web e o seu obxetivo, así que "
 "benvido. Espero que atopes o que buscas.\n"
+"\n"
+"    "
 
 #: corelli/users/apps.py:7
 msgid "Users"
