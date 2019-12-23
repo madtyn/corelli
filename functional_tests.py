@@ -31,14 +31,14 @@ class NewVisitorTest(unittest.TestCase):
         # TODO Use template or make this not language dependent
         self.assertEqual(user_input.get_attribute('placeholder'), 'Username')
         self.assertEqual(passw_input.get_attribute('placeholder'), 'Password')
-        # TODO Use template or make this not language dependent
+        # ENDTODO Use template or make this not language dependent
 
         user_input.send_keys('dummy')
-        passw_input.send_keys('dummy')
+        passw_input.send_keys('lamepass')
         passw_input.send_keys(Keys.ENTER)
 
         # We wait for the new page
-        time.sleep(6)
+        time.sleep(2)
 
         # The "browse" option is now up there
         self.assertTrue('rowse' in (elem.text
