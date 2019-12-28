@@ -2,5 +2,10 @@
 {% load i18n %}
 
 {% block content %}
-    <h1>Content of {input_path}</h1>
+    <h1>Content of /{{input_path}}</h1>
+    <ul id="current_folder_content">
+        {% for item in items %}
+            <li></li>
+        {% endfor %}
+    </ul>
 {% endblock content %}
