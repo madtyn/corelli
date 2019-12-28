@@ -5,9 +5,13 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 from django.conf.urls.i18n import i18n_patterns
+from allauth.account.views import login as allauth_login
 
 urlpatterns = i18n_patterns(*[
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path("", allauth_login, name="welcome_login"),
+    path(
+        "home/", TemplateView.as_view(template_name="pages/home.html"), name="home"
+    ),
     path(
         "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
     ),
