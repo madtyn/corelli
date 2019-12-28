@@ -41,9 +41,9 @@ class NewVisitorTest(unittest.TestCase):
         time.sleep(2)
 
         # The "browse" option is now up there
-        self.assertTrue('rowse' in (elem.text
-                                    for elem in
-                                    self.browser.find_elements_by_tag_name('a'))
+        self.assertTrue(any('rowse' in elem.text
+                                     for elem in
+                                     self.browser.find_elements_by_tag_name('a'))
                         )
 
         # The page now shows a welcome image and message with an invitation
