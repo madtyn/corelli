@@ -2,9 +2,10 @@ import time
 import unittest
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+# from django.test import LiveServerTestCase
 
 
-class NewVisitorTest(unittest.TestCase):
+class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
     def setUp(self) -> None:
         self.browser = webdriver.Firefox()
 
@@ -14,6 +15,8 @@ class NewVisitorTest(unittest.TestCase):
     def test_access_the_web_and_its_contents(self):
         # Corelli has heard about a superb web site for sharing sheet music. He goes to check its homepage
         self.browser.get('http://localhost:8000/accounts/login')
+        # alternative without DB users
+        # self.browser.get(self.live_server_url)
 
         # The user notices the name of the web site
         self.assertIn('Sign In', self.browser.title)
@@ -37,7 +40,7 @@ class NewVisitorTest(unittest.TestCase):
         passw_input.send_keys('lamepass')
         passw_input.send_keys(Keys.ENTER)
 
-        # We wait for the new page
+        # We wait for the new page (browse/ at the root folder)
         time.sleep(2)
 
         # The "browse" option is now up there
@@ -51,12 +54,19 @@ class NewVisitorTest(unittest.TestCase):
         welcome_msg = self.browser.find_element_by_id('welcome_msg')
         self.assertTrue(welcome_msg is not None)
 
-        # He goes to the browse page
-        self.fail('Finish the test!')
+        # Page redirects to the browse page or user requests for the browse page
+        self.browser.get('http://localhost:8000/accounts/browse')
 
         # Now he can see the root content for the sheet music server
+        # The main listing
+        folder_listing = self.browser.find_element_by_css_selector('ul#current_folder_content')
+        self.assertTrue(folder_listing is not None)
+        #... and the files and subdirectories
+        entries_list = self.browser.find_element_by_css_selector('ul#current_folder_content li')
+        self.assertTrue(entries_list is not None and len(entries_list))
 
         # He tries to download the first file README.txt
+        self.fail('Finish the test!')
 
         # If necessary, he goes back to the browse page and then accesses
         # the sheet_music folder
@@ -66,7 +76,3 @@ class NewVisitorTest(unittest.TestCase):
 
         # Happy about having found such a wonderful website resource,
         # he quits for coming back later
-
-
-if __name__ == '__main__':
-    unittest.main()
