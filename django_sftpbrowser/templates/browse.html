@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    Welcome to <span>input_path</span>
-</body>
-</html>
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h1>Content of {input_path}</h1>
+{% endblock content %}
