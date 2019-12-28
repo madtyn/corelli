@@ -3,5 +3,14 @@
 
 
 {% block content %}
+    <script>
+    function redirect(){
+       window.location.href = '{% url 'django_sftpbrowser:sftp-index' %}';
+    }
 
+    setTimeout(redirect, 4000); //2000 is equivalent to 2 seconds
+    </script>
+    <p id="welcome_msg">{% blocktrans %} You are authenticated now. You may go on and
+        explore the sheet music and resources by clicking this button.
+    {% endblocktrans %}</p>
 {% endblock content %}
