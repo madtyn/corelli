@@ -42,13 +42,13 @@ class NewVisitorTest(unittest.TestCase):
 
         # The "browse" option is now up there
         self.assertTrue(any('rowse' in elem.text
-                                     for elem in
-                                     self.browser.find_elements_by_tag_name('a'))
+                            for elem in
+                            self.browser.find_elements_by_tag_name('a'))
                         )
 
         # The page now shows a welcome image and message with an invitation
         # to go to the browse page where you can look for the sheet music
-        welcome_msg = self.browser.find_element_by_id('#welcome_msg')
+        welcome_msg = self.browser.find_element_by_id('welcome_msg')
         self.assertTrue(welcome_msg is not None)
 
         # He goes to the browse page
