@@ -11,7 +11,7 @@ SECRET_KEY = env(
     default="ysESIwhU7C00O2x9b49H9fm0h3XeCCNAaAPj5cvEBqDLSJ27k8al7rhtJZSsUATM",
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "mountain"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "mountain", "corelli.sytes.net"]
 
 
 # DATABASES
