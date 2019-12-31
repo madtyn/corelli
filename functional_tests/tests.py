@@ -92,8 +92,8 @@ class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
         folder_listing = self.wait_for(lambda: self.browser.find_element_by_css_selector('ul#current_folder_content'))
         self.assertTrue(folder_listing is not None)
 
-
-        srv = pysftp.Connection('corelli', username='admin', password='Egr13g.qnap')
+        admin_pass = input('Password for Corelli admin: ')
+        srv = pysftp.Connection('corelli', username='admin', password=admin_pass)
 
         #... and the files and subdirectories
         ref_entries_list = srv.listdir(SFTP_ROOT)
