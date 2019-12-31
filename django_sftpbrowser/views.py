@@ -2,11 +2,10 @@ import os.path
 from io import BytesIO
 
 import pysftp
+from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
 srv = pysftp.Connection('corelli', username='madtyn', password='albenizz')
-SERVER_URL = 'http://localhost:8000'
-SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
 
 
 def paramiko_is_folder(paramiko):
@@ -44,7 +43,7 @@ def paramiko_to_entry(paramiko, input_path):
     else:
         ftype = 'file'
 
-    abs_path = '/'.join((SERVER_URL, 'browse'))
+    abs_path = '/'.join((settings.SERVER_URL, 'browse'))
     if input_path.strip():
         abs_path = '/'.join((abs_path, input_path))
 
@@ -64,9 +63,9 @@ def browse_page(request, input_path=''):
     :return: if the clicked link is a file, it downloads it, otherwise, it sends the
             response with the contents of the clicked folder
     """
-    current_sftp_path = SFTP_ROOT
+    current_sftp_path = settings.SFTP_ROOT
     entries = []
-    browser_current_path = '/'.join((SERVER_URL, 'browse'))
+    browser_current_path = '/'.join((settings.SERVER_URL, 'browse'))
     browser_current_parent_folder = ''
 
     if len(input_path.strip()):
