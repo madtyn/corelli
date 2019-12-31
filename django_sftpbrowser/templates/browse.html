@@ -4,8 +4,11 @@
 {% block content %}
     <h1>Content of /{{input_path}}</h1>
     <ul id="current_folder_content">
-        {% for item in items %}
-            <li></li>
+        {% if parent_folder %}
+            <li class="folder"><a class="folder" href="{{parent_folder}}">Return back to parent</a></li>
+        {% endif %}
+        {% for entry in entries %}
+            <li class="{{entry.ftype}}"><a class="{{entry.ftype}}" href="{{entry.path}}">{{entry.name}}</a></li>
         {% endfor %}
     </ul>
 {% endblock content %}
