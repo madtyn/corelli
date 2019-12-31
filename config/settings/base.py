@@ -273,3 +273,4 @@ SOCIALACCOUNT_ADAPTER = "corelli.users.adapters.SocialAccountAdapter"
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
