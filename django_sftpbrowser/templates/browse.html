@@ -2,10 +2,13 @@
 {% load i18n %}
 
 {% block content %}
+    <p id="browse_msg">{% blocktrans %} NOTE: Please remember that files and folders cannot be translated.
+        They are usually in english. If you need some translation engine you can go to deepl.com or translate.google.com
+    {% endblocktrans %}</p>
     <h1>Content of /{{input_path}}</h1>
     <ul id="current_folder_content">
         {% if parent_folder %}
-            <li class="folder"><a class="folder" href="{{parent_folder}}">Return back to parent</a></li>
+            <li class="folder"><a class="folder" href="{{parent_folder}}">{% trans "Return back to parent" %}</a></li>
         {% endif %}
         {% for entry in entries %}
             <li class="{{entry.ftype}}"><a class="{{entry.ftype}}" href="{{entry.path}}">{{entry.name}}</a></li>
