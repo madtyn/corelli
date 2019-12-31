@@ -5,9 +5,9 @@ from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
 import pysftp
 # from django.test import LiveServerTestCase
+from django.conf import settings
 
 SERVER_URL = 'http://localhost:8000'
-SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
 
 MAX_WAIT = 10
 
@@ -96,7 +96,7 @@ class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
         srv = pysftp.Connection('corelli', username='admin', password=admin_pass)
 
         #... and the files and subdirectories
-        ref_entries_list = srv.listdir(SFTP_ROOT)
+        ref_entries_list = srv.listdir(settings.SFTP_ROOT)
         entries_list = self.browser.find_elements_by_css_selector('ul#current_folder_content li')
         self.assertTrue(entries_list is not None and len(entries_list) == len(ref_entries_list))
 
@@ -113,7 +113,7 @@ class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
 
         # The user can see now the content of the sheet_folder and the url is
         # reflecting the present working directory
-        ref_entries_list = srv.listdir(f'{SFTP_ROOT}/sheet_music')
+        ref_entries_list = srv.listdir(f'{settings.SFTP_ROOT}/sheet_music')
         entries_list = self.browser.find_elements_by_css_selector('ul#current_folder_content li')
         self.assertTrue(entries_list is not None and len(entries_list) - 1 == len(ref_entries_list))
 
