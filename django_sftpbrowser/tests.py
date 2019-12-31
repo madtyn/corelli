@@ -1,7 +1,6 @@
 from django.test import TestCase
 
 SERVER_URL = 'http://localhost:8000'
-SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
 
 
 # Create your tests here.
@@ -24,6 +23,8 @@ class BrowsePageTest(TestCase):
         response = self.goto('/en/browse/sheet_music')
         self.assertTemplateUsed(response, 'browse.html')
         self.assertContains(response, '<li class="folder">')
-        self.assertContains(response, f'<a class="folder" href="{SERVER_URL}/browse/sheet_music/collections">collections</a>')
+        self.assertContains(response, f'<a class="folder" href="{SERVER_URL}/browse'
+                                      f'/sheet_music/collections">collections</a>')
         self.assertContains(response, '<li class="folder">')
-        self.assertContains(response, f'<a class="folder" href="{SERVER_URL}/browse/sheet_music/composers">composers</a>')
+        self.assertContains(response, f'<a class="folder" href="{SERVER_URL}/browse'
+                                      f'/sheet_music/composers">composers</a>')
