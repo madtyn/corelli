@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-16 23:40+0100\n"
+"POT-Creation-Date: 2019-12-31 13:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -309,12 +309,12 @@ msgstr ""
 "dirección de e-mail</a>."
 
 #: corelli/templates/base.html:48
-msgid "Home"
-msgstr "Inicio"
-
-#: corelli/templates/base.html:51
 msgid "About"
 msgstr "Qué es esto"
+
+#: corelli/templates/base.html:52
+msgid "Home"
+msgstr "Inicio"
 
 #: corelli/templates/base.html:55
 msgid "Browse"
@@ -350,6 +350,16 @@ msgstr ""
 "\n"
 "   "
 
+#: corelli/templates/pages/home.html:13
+msgid ""
+" You are authenticated now. You may go on and\n"
+"        explore the sheet music and resources by clicking this link.\n"
+"    "
+msgstr ""
+" Usted está autentificado ahora. Puede seguir y\n"
+"        explorar las partituras y recursos musicales clickeando en este enlace.\n"
+"    "
+
 #: corelli/users/apps.py:7
 msgid "Users"
 msgstr "Usuarios"
@@ -365,3 +375,19 @@ msgstr "Nombre del usuario"
 #: corelli/users/views.py:34
 msgid "Infos successfully updated"
 msgstr "Información actualizada con éxito"
+
+#: django_sftpbrowser/templates/browse.html:5
+msgid ""
+" NOTE: Please remember that files and folders cannot be translated.\n"
+"        They are usually in english. If you need some translation engine you "
+"can go to deepl.com or translate.google.com\n"
+"    "
+msgstr ""
+" NOTA: Por favor, recuerde que los nombres de ficheros y carpetas no pueden ser traducidos.\n"
+"        Frecuentemente están en inglés. Si necesita traducción puede "
+"acudir a deepl.com o translate.google.com\n"
+"    "
+
+#: django_sftpbrowser/templates/browse.html:11
+msgid "Return back to parent"
+msgstr "Volver a la carpeta anterior"
