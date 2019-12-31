@@ -3,7 +3,11 @@ import unittest
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.keys import Keys
+import pysftp
 # from django.test import LiveServerTestCase
+
+SERVER_URL = 'http://localhost:8000'
+SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
 
 MAX_WAIT = 10
 
@@ -47,7 +51,7 @@ class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
 
     def test_access_the_web_and_its_contents(self):
         # Corelli has heard about a superb web site for sharing sheet music. He goes to check its homepage
-        self.browser.get('http://localhost:8000/accounts/login')
+        self.browser.get(f'{SERVER_URL}/accounts/login')
         # alternative without DB users
         # self.browser.get(self.live_server_url)
 
@@ -64,7 +68,6 @@ class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
         user_input = self.browser.find_element_by_id('id_login')
         passw_input = self.browser.find_element_by_id('id_password')
 
-        # TODO Use template or make this not language dependent
         self.assertEqual(user_input.get_attribute('placeholder'), 'Username')
         self.assertEqual(passw_input.get_attribute('placeholder'), 'Password')
         # ENDTODO Use template or make this not language dependent
@@ -82,24 +85,47 @@ class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
         self.assertTrue(welcome_msg is not None)
 
         # Page redirects to the browse page or user requests for the browse page
-        self.browser.get('http://localhost:8000/browse')
+        self.browser.get(f'{SERVER_URL}/browse')
 
-        # Now he can see the root content for the sheet music server
+        # Now the user can see the root content for the sheet music server
         # The main listing
         folder_listing = self.wait_for(lambda: self.browser.find_element_by_css_selector('ul#current_folder_content'))
         self.assertTrue(folder_listing is not None)
+
+
+        srv = pysftp.Connection('corelli', username='admin', password='Egr13g.qnap')
+
         #... and the files and subdirectories
-        entries_list = self.browser.find_element_by_css_selector('ul#current_folder_content li')
-        self.assertTrue(entries_list is not None and len(entries_list))
+        ref_entries_list = srv.listdir(SFTP_ROOT)
+        entries_list = self.browser.find_elements_by_css_selector('ul#current_folder_content li')
+        self.assertTrue(entries_list is not None and len(entries_list) == len(ref_entries_list))
 
         # He tries to download the first file README.txt
-        self.fail('Finish the test!')
+        readme_file_link = self.browser.find_element_by_link_text('README.txt')
+        self.assertIsNotNone(readme_file_link)
 
-        # If necessary, he goes back to the browse page and then accesses
+        # alternative: self.browser.find_element_by_css_selector()
+        readme_file_link.click()
+
+        # If necessary, the user goes back to the browse page and then accesses
         # the sheet_music folder
+        self.browser.get(f'{SERVER_URL}/browse/sheet_music')
 
-        # He can see now the content of the sheet_folder and the url is
+        # The user can see now the content of the sheet_folder and the url is
         # reflecting the present working directory
+        ref_entries_list = srv.listdir(f'{SFTP_ROOT}/sheet_music')
+        entries_list = self.browser.find_elements_by_css_selector('ul#current_folder_content li')
+        self.assertTrue(entries_list is not None and len(entries_list) - 1 == len(ref_entries_list))
+
+        # The user notices a "Return back to parent" link and clicks it
+        go_back_link = self.browser.find_element_by_link_text('Return back to parent')
+        self.assertIsNotNone(go_back_link)
+        go_back_link.click()
+
+        # The original content is now there
+        readme_file_link = self.browser.find_element_by_link_text('README.txt')
+        self.assertIsNotNone(readme_file_link)
 
         # Happy about having found such a wonderful website resource,
-        # he quits for coming back later
+        # the user quits for coming back later
+        self.browser.quit()
