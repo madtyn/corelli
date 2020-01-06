@@ -39,7 +39,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = "corelli"
+project = "Corelli project"
 copyright = """2019, madtyn"""
 
 # The version info for the project you're documenting, acts as replacement for

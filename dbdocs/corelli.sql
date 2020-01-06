@@ -516,7 +516,7 @@ COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
 \.
 
 COPY public.django_site (id, domain, name) FROM stdin;
-1	example.com	corelli
+1	corelli.sytes.net	corelli
 \.
 
 COPY public.socialaccount_socialaccount (id, provider, uid, last_login, date_joined, extra_data, user_id) FROM stdin;
