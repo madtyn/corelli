@@ -227,7 +227,7 @@ EMAIL_TIMEOUT = 5
 # Django Admin URL.
 ADMIN_URL = "admin/"
 # https://docs.djangoproject.com/en/dev/ref/settings/#admins
-ADMINS = [("""madtyn""", "madtyn@gmail.com")]
+ADMINS = [("""webmaster""", "corellionlineproject@gmail.com")]
 # https://docs.djangoproject.com/en/dev/ref/settings/#managers
 MANAGERS = ADMINS
 
@@ -279,3 +279,4 @@ ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
 HOST = 'corelli.sytes.net'
 SERVER_URL = f'http://{HOST}:8000'
+ADMIN_EMAIL_ADDRESS = ADMINS[0][1]

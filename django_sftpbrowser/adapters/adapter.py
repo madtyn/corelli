@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
 from allauth.account.adapter import DefaultAccountAdapter
 
@@ -19,7 +20,7 @@ class DjangoSftpAdapter(DefaultAccountAdapter):
         else:
             email_template = 'account/email/email_confirmation'
         self.send_mail(email_template,
-                       'martin.torre.castro@gmail.com',
+                       settings.ADMIN_EMAIL_ADDRESS,
                        ctx)
 
     def confirm_email(self, request, email_address):
