@@ -1,16 +1,17 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load static i18n %}
 
 
 {% block content %}
-    <script>
-    function redirect(){
-       window.location.href = '{% url 'django_sftpbrowser:sftp-index' %}';
-    }
-
-    setTimeout(redirect, 4000); //2000 is equivalent to 2 seconds
-    </script>
+    {% url 'django_sftpbrowser:sftp-index' as redirLink %}
     <p id="welcome_msg">{% blocktrans %} You are authenticated now. You may go on and
-        explore the sheet music and resources by clicking this link.
+        explore the sheet music and resources by clicking <a id="redirLink" href="{{redirLink}}">this link</a>.
     {% endblocktrans %}</p>
+
+    <div id="countdown">5</div>
 {% endblock content %}
+
+{% block javascript %}
+    {{ block.super }}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock javascript %}
