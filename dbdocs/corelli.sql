@@ -741,9 +741,11 @@ GRANT ALL PRIVILEGES ON TABLE users_user_groups TO corellidev;
 GRANT ALL PRIVILEGES ON TABLE users_user_user_permissions TO corellidev;
 GRANT ALL PRIVILEGES ON TABLE auth_permission TO corellidev;
 GRANT ALL PRIVILEGES ON TABLE socialaccount_socialaccount TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE account_emailconfirmation TO corellidev;
 GRANT ALL PRIVILEGES ON users_user_id_seq TO corellidev;
 GRANT ALL PRIVILEGES ON account_emailaddress_id_seq TO corellidev;
 GRANT ALL PRIVILEGES ON django_admin_log_id_seq TO corellidev;
+
 
 
 --
