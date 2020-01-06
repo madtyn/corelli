@@ -1,0 +1,3 @@
+{% load i18n %}
+{% blocktrans %}Confirmation e-mail sent to admin for a requested account with email {{email}}.
+You will receive an email as soon as the account is activated and confirmed. This could take a couple of days.{% endblocktrans %}

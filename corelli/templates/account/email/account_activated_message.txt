@@ -1,0 +1,6 @@
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans %}The requested account for email {{email}} has been activated.
+
+Now you may enjoy the website. Thank you for your patience. {% endblocktrans %}
+{% endautoescape %}

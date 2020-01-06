@@ -266,13 +266,16 @@ ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_ADAPTER = "corelli.users.adapters.AccountAdapter"
+ACCOUNT_ADAPTER = "django_sftpbrowser.adapters.adapter.DjangoSftpAdapter"  # "corelli.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "corelli.users.adapters.SocialAccountAdapter"
 
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+# Confirms as soon as anybody clicks on the generated unique url
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+
 SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
 HOST = 'corelli.sytes.net'
 SERVER_URL = f'http://{HOST}:8000'
