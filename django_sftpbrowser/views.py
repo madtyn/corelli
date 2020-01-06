@@ -5,7 +5,8 @@ import pysftp
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
-srv = pysftp.Connection('corelli', username='madtyn', password='albenizz')
+
+srv = pysftp.Connection(settings.CORELLI_SFTP_SERVER_URL, username='madtyn', password='albenizz')
 
 
 def paramiko_is_folder(paramiko):

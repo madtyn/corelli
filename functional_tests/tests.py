@@ -93,7 +93,7 @@ class NewVisitorTest(unittest.TestCase):  # LiveServerTestCase
         self.assertTrue(folder_listing is not None)
 
         admin_pass = input('Password for Corelli admin: ')
-        srv = pysftp.Connection('corelli', username='admin', password=admin_pass)
+        srv = pysftp.Connection(settings.CORELLI_SFTP_SERVER_URL, username='admin', password=admin_pass)
 
         #... and the files and subdirectories
         ref_entries_list = srv.listdir(settings.SFTP_ROOT)
