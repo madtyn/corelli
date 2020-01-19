@@ -6,7 +6,24 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
 
-srv = pysftp.Connection(settings.CORELLI_SFTP_SERVER_URL, username='madtyn', password='albenizz')
+srv = pysftp.Connection(settings.CORELLI_SFTP_SERVER_URL, username='madtyn', password=settings.SFTP_PASSWORD)
+
+
+def download_sftp_file(current_sftp_path):
+    """
+    It sends the bytes from the file to the user as a Django HttpResponse.
+    The user just experiment a normal file download.
+
+    :param current_sftp_path: the path to the sftp file
+    :return: the HttpResponse download object for the file
+    """
+    in_memory_file = BytesIO()
+    srv.getfo(current_sftp_path, in_memory_file)
+    in_memory_file.seek(0)
+    # print(in_memory_file.tell())
+    response = HttpResponse(in_memory_file.read(), content_type="application/force-download")
+    response['Content-Disposition'] = f'attachment;filename={os.path.basename(current_sftp_path)}'
+    return response
 
 
 def paramiko_is_folder(paramiko):
@@ -44,11 +61,9 @@ def paramiko_to_entry(paramiko, input_path):
     else:
         ftype = 'file'
 
-    abs_path = '/'.join((settings.SERVER_URL, 'browse'))
-    if input_path.strip():
-        abs_path = '/'.join((abs_path, input_path))
-
-    abs_path = '/'.join((abs_path, paramiko.filename))
+    #abs_path = '/'.join((settings.SERVER_URL, 'browse'))  # HERE. I get the SERVER_URL from settings, but...
+                                                          # maybe I could pass the parameter in the invocation/call
+    abs_path = paramiko.filename
 
     return Entry(paramiko.filename, ftype, abs_path)
 
@@ -66,7 +81,8 @@ def browse_page(request, input_path=''):
     """
     current_sftp_path = settings.SFTP_ROOT
     entries = []
-    browser_current_path = '/'.join((settings.SERVER_URL, 'browse'))
+    browser_current_path = '/'.join((settings.SERVER_URL, 'browse'))  # HERE. I get the SERVER_URL from settings, but...
+                                                                      # maybe I could do the same from request
     browser_current_parent_folder = ''
 
     if len(input_path.strip()):
@@ -75,13 +91,7 @@ def browse_page(request, input_path=''):
         browser_current_parent_folder = os.path.dirname(browser_current_path)
 
     if srv.isfile(current_sftp_path):
-        in_memory_file = BytesIO()
-        srv.getfo(current_sftp_path, in_memory_file)
-        in_memory_file.seek(0)
-        print(in_memory_file.tell())
-        response = HttpResponse(in_memory_file.read(), content_type="application/force-download")
-        response['Content-Disposition'] = f'attachment;filename={os.path.basename(current_sftp_path)}'
-        return response
+        return download_sftp_file(current_sftp_path)
 
     # We show the content of the folder
     paramiko_list = srv.listdir_attr(current_sftp_path)
@@ -94,3 +104,6 @@ def browse_page(request, input_path=''):
                       'input_path': input_path,
                       'entries': entries,
                   })
+
+
+

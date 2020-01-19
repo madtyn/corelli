@@ -277,6 +277,5 @@ SOCIALACCOUNT_ADAPTER = "corelli.users.adapters.SocialAccountAdapter"
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 
 SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
-HOST = 'corelli.sytes.net'
-SERVER_URL = f'http://{HOST}:8000'
+SFTP_PASSWORD = env.str("SFTP_PASSWORD")
 ADMIN_EMAIL_ADDRESS = ADMINS[0][1]

@@ -10,8 +10,6 @@ SECRET_KEY = env(
     "DJANGO_SECRET_KEY",
     default="ysESIwhU7C00O2x9b49H9fm0h3XeCCNAaAPj5cvEBqDLSJ27k8al7rhtJZSsUATM",
 )
-# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "mountain", "83.165.40.231", HOST]
 
 
 # DATABASES
@@ -59,10 +57,16 @@ INTERNAL_IPS = ["127.0.0.1", "10.0.2.2"]
 # https://django-extensions.readthedocs.io/en/latest/installation_instructions.html#configuration
 INSTALLED_APPS += ["django_extensions"]  # noqa F405
 
+
 # Your stuff...
 # ------------------------------------------------------------------------------
-CORELLI_SFTP_SERVER_URL = 'corelli'
+HOST = env.url("DJANGO_HOST_URL", default='http://corelli.sytes.net')
+SERVER_URL = f'{HOST.path}'
 
+# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "mountain", "83.165.40.231", HOST.path]
+
+CORELLI_SFTP_SERVER_URL = 'corelli'
 """
 Https stuff
 

@@ -5,8 +5,7 @@ from .base import env
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env("DJANGO_SECRET_KEY")
-# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST])
+
 
 # DATABASES
 # ------------------------------------------------------------------------------
@@ -17,7 +16,13 @@ DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)  # no
 # CACHES
 # ------------------------------------------------------------------------------
 CACHES = {
-    "default": {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+# FIXME
+"""
+ "default": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": env("REDIS_URL"),
         "OPTIONS": {
@@ -27,7 +32,8 @@ CACHES = {
             "IGNORE_EXCEPTIONS": True,
         },
     }
-}
+"""
+# ENDFIXME
 
 # SECURITY
 # ------------------------------------------------------------------------------
@@ -94,6 +100,8 @@ ADMIN_URL = env("DJANGO_ADMIN_URL")
 # Anymail (Mailgun)
 # ------------------------------------------------------------------------------
 # https://anymail.readthedocs.io/en/stable/installation/#installing-anymail
+# FIXME Uncomment
+"""
 INSTALLED_APPS += ["anymail"]  # noqa F405
 EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
@@ -102,6 +110,8 @@ ANYMAIL = {
     "MAILGUN_SENDER_DOMAIN": env("MAILGUN_DOMAIN"),
     "MAILGUN_API_URL": env("MAILGUN_API_URL", default="https://api.mailgun.net/v3"),
 }
+"""
+# ENDFIXME
 
 # WhiteNoise
 # ------------------------------------------------------------------------------
@@ -156,4 +166,11 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-CORELLI_SFTP_SERVER_URL = 'corelli.sytes.net'
+HOST = env.url("DJANGO_HOST_URL", default='corelli.sytes.net')
+print('===============>', HOST)
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST])
+
+CORELLI_SFTP_SERVER_URL = 'corelli.myftp.org'
+SERVER_URL = f'{HOST}:8000'  # TODO
