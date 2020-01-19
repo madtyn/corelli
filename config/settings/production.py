@@ -5,8 +5,7 @@ from .base import env
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 SECRET_KEY = env("DJANGO_SECRET_KEY")
-# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST])
+
 
 # DATABASES
 # ------------------------------------------------------------------------------
@@ -156,4 +155,11 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-CORELLI_SFTP_SERVER_URL = 'corelli.sytes.net'
+HOST = env.url("DJANGO_HOST_URL", default='https://corelli.sytes.net:8000')
+
+
+# https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST])
+
+CORELLI_SFTP_SERVER_URL = 'corelli.myftp.org'
+SERVER_URL = f'{HOST}:8000'  # TODO
