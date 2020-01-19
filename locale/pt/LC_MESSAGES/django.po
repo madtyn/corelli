@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-01-19 13:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: corelli/templates/account/account_inactive.html:5
+#: corelli/templates/account/account_inactive.html:8
+msgid "Account Inactive"
+msgstr ""
+
+#: corelli/templates/account/account_inactive.html:10
+msgid "This account is inactive."
+msgstr ""
+
+#: corelli/templates/account/email.html:7
+msgid "Account"
+msgstr ""
+
+#: corelli/templates/account/email.html:10
+msgid "E-mail Addresses"
+msgstr ""
+
+#: corelli/templates/account/email.html:13
+msgid "The following e-mail addresses are associated with your account:"
+msgstr ""
+
+#: corelli/templates/account/email.html:27
+msgid "Verified"
+msgstr ""
+
+#: corelli/templates/account/email.html:29
+msgid "Unverified"
+msgstr ""
+
+#: corelli/templates/account/email.html:31
+msgid "Primary"
+msgstr ""
+
+#: corelli/templates/account/email.html:37
+msgid "Make Primary"
+msgstr ""
+
+#: corelli/templates/account/email.html:38
+msgid "Re-send Verification"
+msgstr ""
+
+#: corelli/templates/account/email.html:39
+msgid "Remove"
+msgstr ""
+
+#: corelli/templates/account/email.html:46
+msgid "Warning:"
+msgstr ""
+
+#: corelli/templates/account/email.html:46
+msgid ""
+"You currently do not have any e-mail address set up. You should really add "
+"an e-mail address so you can receive notifications, reset your password, etc."
+msgstr ""
+
+#: corelli/templates/account/email.html:51
+msgid "Add E-mail Address"
+msgstr ""
+
+#: corelli/templates/account/email.html:56
+msgid "Add E-mail"
+msgstr ""
+
+#: corelli/templates/account/email.html:66
+msgid "Do you really want to remove the selected e-mail address?"
+msgstr ""
+
+#: corelli/templates/account/email/account_activated_message.txt:3
+#, python-format
+msgid ""
+"The requested account for email %(email)s has been activated.\n"
+"\n"
+"Now you may enjoy the website. Thank you for your patience. "
+msgstr ""
+
+#: corelli/templates/account/email/account_activated_subject.txt:3
+msgid "Your account has been activated"
+msgstr ""
+
+#: corelli/templates/account/email_confirm.html:6
+#: corelli/templates/account/email_confirm.html:10
+msgid "Confirm E-mail Address"
+msgstr ""
+
+#: corelli/templates/account/email_confirm.html:16
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+
+#: corelli/templates/account/email_confirm.html:20
+msgid "Confirm"
+msgstr ""
+
+#: corelli/templates/account/email_confirm.html:27
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+
+#: corelli/templates/account/login.html:7
+#: corelli/templates/account/login.html:11
+#: corelli/templates/account/login.html:44 corelli/templates/base.html:72
+msgid "Sign In"
+msgstr ""
+
+#: corelli/templates/account/login.html:16
+#, python-format
+msgid ""
+"Please sign in with one\n"
+"of your existing third party accounts. Or, <a href=\"%(signup_url)s\">sign "
+"up</a>\n"
+"for a %(site_name)s account and sign in below:"
+msgstr ""
+
+#: corelli/templates/account/login.html:26
+msgid "or"
+msgstr ""
+
+#: corelli/templates/account/login.html:33
+#, python-format
+msgid ""
+"If you have not created an account yet, then please\n"
+"<a href=\"%(signup_url)s\">sign up</a> first."
+msgstr ""
+
+#: corelli/templates/account/login.html:43
+msgid "Forgot Password?"
+msgstr ""
+
+#: corelli/templates/account/logout.html:5
+#: corelli/templates/account/logout.html:8
+#: corelli/templates/account/logout.html:17 corelli/templates/base.html:63
+msgid "Sign Out"
+msgstr ""
+
+#: corelli/templates/account/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: corelli/templates/account/messages/email_confirmation_sent.txt:2
+#, python-format
+msgid ""
+"Confirmation e-mail sent to admin for a requested account with email "
+"%(email)s.\n"
+"You will receive an email as soon as the account is activated and confirmed. "
+"This could take a couple of days."
+msgstr ""
+
+#: corelli/templates/account/password_change.html:6
+#: corelli/templates/account/password_change.html:9
+#: corelli/templates/account/password_change.html:14
+#: corelli/templates/account/password_reset_from_key.html:5
+#: corelli/templates/account/password_reset_from_key.html:8
+#: corelli/templates/account/password_reset_from_key_done.html:4
+#: corelli/templates/account/password_reset_from_key_done.html:7
+msgid "Change Password"
+msgstr ""
+
+#: corelli/templates/account/password_reset.html:7
+#: corelli/templates/account/password_reset.html:11
+#: corelli/templates/account/password_reset_done.html:6
+#: corelli/templates/account/password_reset_done.html:9
+msgid "Password Reset"
+msgstr ""
+
+#: corelli/templates/account/password_reset.html:16
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll send you "
+"an e-mail allowing you to reset it."
+msgstr ""
+
+#: corelli/templates/account/password_reset.html:21
+msgid "Reset My Password"
+msgstr ""
+
+#: corelli/templates/account/password_reset.html:24
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: corelli/templates/account/password_reset_done.html:15
+msgid ""
+"We have sent you an e-mail. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: corelli/templates/account/password_reset_from_key.html:8
+msgid "Bad Token"
+msgstr ""
+
+#: corelli/templates/account/password_reset_from_key.html:12
+#, python-format
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
+"a>."
+msgstr ""
+
+#: corelli/templates/account/password_reset_from_key.html:18
+msgid "change password"
+msgstr ""
+
+#: corelli/templates/account/password_reset_from_key.html:21
+#: corelli/templates/account/password_reset_from_key_done.html:8
+msgid "Your password is now changed."
+msgstr ""
+
+#: corelli/templates/account/password_set.html:6
+#: corelli/templates/account/password_set.html:9
+#: corelli/templates/account/password_set.html:14
+msgid "Set Password"
+msgstr ""
+
+#: corelli/templates/account/signup.html:6
+msgid "Signup"
+msgstr ""
+
+#: corelli/templates/account/signup.html:9
+#: corelli/templates/account/signup.html:19 corelli/templates/base.html:68
+msgid "Sign Up"
+msgstr ""
+
+#: corelli/templates/account/signup.html:11
+#, python-format
+msgid ""
+"Already have an account? Then please <a href=\"%(login_url)s\">sign in</a>."
+msgstr ""
+
+#: corelli/templates/account/signup_closed.html:5
+#: corelli/templates/account/signup_closed.html:8
+msgid "Sign Up Closed"
+msgstr ""
+
+#: corelli/templates/account/signup_closed.html:10
+msgid "We are sorry, but the sign up is currently closed."
+msgstr ""
+
+#: corelli/templates/account/verification_sent.html:5
+#: corelli/templates/account/verification_sent.html:8
+#: corelli/templates/account/verified_email_required.html:5
+#: corelli/templates/account/verified_email_required.html:8
+msgid "Verify Your E-mail Address"
+msgstr ""
+
+#: corelli/templates/account/verification_sent.html:10
+msgid ""
+"We have sent an e-mail to you for verification. Follow the link provided to "
+"finalize the signup process. Please contact us if you do not receive it "
+"within a few minutes."
+msgstr ""
+
+#: corelli/templates/account/verified_email_required.html:12
+msgid ""
+"This part of the site requires us to verify that\n"
+"you are who you claim to be. For this purpose, we require that you\n"
+"verify ownership of your e-mail address. "
+msgstr ""
+
+#: corelli/templates/account/verified_email_required.html:16
+msgid ""
+"We have sent an e-mail to you for\n"
+"verification. Please click on the link inside this e-mail. Please\n"
+"contact us if you do not receive it within a few minutes."
+msgstr ""
+
+#: corelli/templates/account/verified_email_required.html:20
+#, python-format
+msgid ""
+"<strong>Note:</strong> you can still <a href=\"%(email_url)s\">change your e-"
+"mail address</a>."
+msgstr ""
+
+#: corelli/templates/base.html:48
+msgid "About"
+msgstr ""
+
+#: corelli/templates/base.html:52
+msgid "Home"
+msgstr ""
+
+#: corelli/templates/base.html:55
+msgid "Browse"
+msgstr ""
+
+#: corelli/templates/base.html:59
+msgid "My Profile"
+msgstr ""
+
+#: corelli/templates/language_selector.html:16
+msgid "Accept"
+msgstr ""
+
+#: corelli/templates/pages/about.html:5
+msgid ""
+" This web site is a musical personal project for sharing sheet music and "
+"resources for musicians.\n"
+"        I made it because I enjoy collecting sheet music and I always have "
+"believed that culture should be shared and enjoyed.\n"
+"\n"
+"        If you think like that, you will love this web site and its goal, so "
+"welcome. I hope you will find what you were\n"
+"        looking for.\n"
+"    "
+msgstr ""
+
+#: corelli/templates/pages/home.html:7
+#, python-format
+msgid ""
+" You are authenticated now. You may go on and\n"
+"        explore the sheet music and resources by clicking <a id=\"redirLink"
+"\" href=\"%(redirLink)s\">this link</a>.\n"
+"    "
+msgstr ""
+
+#: corelli/users/apps.py:7
+msgid "Users"
+msgstr ""
+
+#: corelli/users/forms.py:16
+msgid "This username has already been taken."
+msgstr ""
+
+#: corelli/users/models.py:11
+msgid "Name of User"
+msgstr ""
+
+#: corelli/users/views.py:34
+msgid "Infos successfully updated"
+msgstr ""
+
+#: django_sftpbrowser/templates/browse.html:5
+msgid ""
+" NOTE: Please remember that files and folders cannot be translated.\n"
+"        They are usually in english. If you need some translation engine you "
+"can go to deepl.com or translate.google.com\n"
+"    "
+msgstr ""
+
+#: django_sftpbrowser/templates/browse.html:11
+msgid "Return back to parent"
+msgstr ""
