@@ -1,12 +1,13 @@
 import os.path
 from io import BytesIO
 
-import pysftp
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
 
-srv = pysftp.Connection(settings.CORELLI_SFTP_SERVER_URL, username='madtyn', password=settings.SFTP_PASSWORD)
+from django_sftpbrowser.sftp import get_sftp_connection
+
+srv = get_sftp_connection()
 
 
 def download_sftp_file(current_sftp_path):

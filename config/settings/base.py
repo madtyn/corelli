@@ -275,7 +275,13 @@ SOCIALACCOUNT_ADAPTER = "corelli.users.adapters.SocialAccountAdapter"
 # ------------------------------------------------------------------------------
 # Confirms as soon as anybody clicks on the generated unique url
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ADMIN_EMAIL_ADDRESS = ADMINS[0][1]
 
 SFTP_ROOT = '/share/MD0_DATA/Public/corelli_ftp'
 SFTP_PASSWORD = env.str("SFTP_PASSWORD")
-ADMIN_EMAIL_ADDRESS = ADMINS[0][1]
+HOST_KEY = b"AAAAB3NzaC1yc2EAAAABIwAAAQEAzVKMOEneq3Z5VBdlMaktKlYFIbJSFU/vWWRZO" \
+           b"bfhjpA0iS85AufLloB2oZ7br/PyrTyFlGedlbwLJzZ4cz097NOPfC7CXUwigkmlDK" \
+           b"muWkXfwrK2i0s/Hoi8jfkdajdgirilGwXEqF1H6OaU7jI2nnW3DIXwfv+v7iGbJPa" \
+           b"UW2xtZBcT6eVv7OHKLkNMIAFLuREPLRlS0Bnpmw84XGItQugwbV2VgRAAKctkH0IS" \
+           b"LKUjQHR+i4wsyC03ijdT3HrG01hDUFhLD9ocYCN/oBmZShyAhNcWzjZ7IVxjGfPRm" \
+           b"hsvJw/XUDU/O8YPpMnvxgH8/mmxpZmU0XFEBaXR3sDHtQ=="
