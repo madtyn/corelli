@@ -167,7 +167,7 @@ HOST = env.url("DJANGO_HOST_URL", default='corelli.sytes.net')
 print('===============>', HOST)
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST])
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST.netloc])
 
 CORELLI_SFTP_SERVER_URL = 'corelli.myftp.org'
-SERVER_URL = f'{HOST}:8000'  # TODO
+SERVER_URL = f'{HOST.netloc}'
