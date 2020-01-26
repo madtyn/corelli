@@ -62,9 +62,11 @@ def paramiko_to_entry(paramiko, input_path):
     else:
         ftype = 'file'
 
-    #abs_path = '/'.join((settings.SERVER_URL, 'browse'))  # HERE. I get the SERVER_URL from settings, but...
-                                                          # maybe I could pass the parameter in the invocation/call
-    abs_path = paramiko.filename
+    abs_path = '/'.join((settings.SERVER_URL, 'browse'))
+    if input_path.strip():
+        abs_path = '/'.join((abs_path, input_path))
+
+    abs_path = '/'.join((abs_path, paramiko.filename))
 
     return Entry(paramiko.filename, ftype, abs_path)
 
@@ -105,6 +107,3 @@ def browse_page(request, input_path=''):
                       'input_path': input_path,
                       'entries': entries,
                   })
-
-
-
