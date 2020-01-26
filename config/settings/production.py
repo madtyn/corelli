@@ -170,4 +170,4 @@ print('===============>', HOST)
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST.netloc])
 
 CORELLI_SFTP_SERVER_URL = 'corelli.myftp.org'
-SERVER_URL = f'{HOST.netloc}'
+SERVER_URL = f'{HOST.scheme}://{HOST.netloc}'
