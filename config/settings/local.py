@@ -61,7 +61,7 @@ INSTALLED_APPS += ["django_extensions"]  # noqa F405
 # Your stuff...
 # ------------------------------------------------------------------------------
 HOST = env.url("DJANGO_HOST_URL", default='http://corelli.sytes.net')
-SERVER_URL = f'{HOST.path}'
+SERVER_URL = f'{HOST.scheme}://{HOST.path}'
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1", "mountain", "83.165.40.231", HOST.path]
