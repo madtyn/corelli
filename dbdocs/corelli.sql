@@ -732,19 +732,19 @@ GRANT ALL ON DATABASE corelli TO corellidev;
 GRANT ALL ON TABLE public.django_migrations TO corellidev;
 GRANT ALL ON TABLE public.django_session TO corellidev;
 GRANT ALL ON TABLE public.django_site TO corellidev;
-GRANT ALL ON TABLE users_user TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE account_emailaddress TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE django_admin_log TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE django_content_type TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE auth_group TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE users_user_groups TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE users_user_user_permissions TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE auth_permission TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE socialaccount_socialaccount TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE account_emailconfirmation TO corellidev;
-GRANT ALL PRIVILEGES ON users_user_id_seq TO corellidev;
-GRANT ALL PRIVILEGES ON account_emailaddress_id_seq TO corellidev;
-GRANT ALL PRIVILEGES ON django_admin_log_id_seq TO corellidev;
+GRANT ALL ON TABLE public.users_user TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.account_emailaddress TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.django_admin_log TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.django_content_type TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.auth_group TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.users_user_groups TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.users_user_user_permissions TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.auth_permission TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.socialaccount_socialaccount TO corellidev;
+GRANT ALL PRIVILEGES ON TABLE public.account_emailconfirmation TO corellidev;
+GRANT ALL PRIVILEGES ON public.users_user_id_seq TO corellidev;
+GRANT ALL PRIVILEGES ON public.account_emailaddress_id_seq TO corellidev;
+GRANT ALL PRIVILEGES ON public.django_admin_log_id_seq TO corellidev;
 
 
 
