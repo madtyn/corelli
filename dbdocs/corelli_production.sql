@@ -16,17 +16,17 @@ SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
 
-DROP DATABASE IF EXISTS corelli;
+--DROP DATABASE IF EXISTS corelli;
 --
 -- Name: corelli; Type: DATABASE; Schema: -; Owner: madtyn
 --
 
-CREATE DATABASE corelli WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'es_ES.UTF-8' LC_CTYPE = 'es_ES.UTF-8';
+-- CREATE DATABASE corelli WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'es_ES.UTF-8' LC_CTYPE = 'es_ES.UTF-8';
 
 
 --ALTER DATABASE corelli OWNER TO madtyn;
 
-\connect corelli
+-- \connect corelli
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -728,23 +728,23 @@ ALTER TABLE ONLY public.users_user_user_permissions
 
 --# GRANTS
 
-GRANT ALL ON DATABASE corelli TO corellidev;
-GRANT ALL ON TABLE public.django_migrations TO corellidev;
-GRANT ALL ON TABLE public.django_session TO corellidev;
-GRANT ALL ON TABLE public.django_site TO corellidev;
-GRANT ALL ON TABLE users_user TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE account_emailaddress TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE django_admin_log TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE django_content_type TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE auth_group TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE users_user_groups TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE users_user_user_permissions TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE auth_permission TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE socialaccount_socialaccount TO corellidev;
-GRANT ALL PRIVILEGES ON TABLE account_emailconfirmation TO corellidev;
-GRANT ALL PRIVILEGES ON users_user_id_seq TO corellidev;
-GRANT ALL PRIVILEGES ON account_emailaddress_id_seq TO corellidev;
-GRANT ALL PRIVILEGES ON django_admin_log_id_seq TO corellidev;
+-- GRANT ALL ON DATABASE corelli TO corellidev;
+GRANT ALL ON TABLE public.django_migrations TO PUBLIC;
+GRANT ALL ON TABLE public.django_session TO PUBLIC;
+GRANT ALL ON TABLE public.django_site TO PUBLIC;
+GRANT ALL ON TABLE public.users_user TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.account_emailaddress TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.django_admin_log TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.django_content_type TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.auth_group TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.users_user_groups TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.users_user_user_permissions TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.auth_permission TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.socialaccount_socialaccount TO PUBLIC;
+GRANT ALL PRIVILEGES ON TABLE public.account_emailconfirmation TO PUBLIC;
+GRANT ALL PRIVILEGES ON public.users_user_id_seq TO PUBLIC;
+GRANT ALL PRIVILEGES ON public.account_emailaddress_id_seq TO PUBLIC;
+GRANT ALL PRIVILEGES ON public.django_admin_log_id_seq TO PUBLIC;
 
 
 

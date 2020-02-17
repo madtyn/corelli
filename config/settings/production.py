@@ -1,5 +1,8 @@
 from .base import *  # noqa
 from .base import env
+import logging
+
+logger = logging.getLogger(__name__)
 
 # GENERAL
 # ------------------------------------------------------------------------------
@@ -83,7 +86,7 @@ TEMPLATES[0]["OPTIONS"]["loaders"] = [  # noqa F405
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-from-email
 DEFAULT_FROM_EMAIL = env(
-    "DJANGO_DEFAULT_FROM_EMAIL", default="Corelli project <noreply@corelli.sytes.net>"
+    "DJANGO_DEFAULT_FROM_EMAIL", default="Corelli project <noreply@corellionlineproject.org>"
 )
 # https://docs.djangoproject.com/en/dev/ref/settings/#server-email
 SERVER_EMAIL = env("DJANGO_SERVER_EMAIL", default=DEFAULT_FROM_EMAIL)
@@ -163,11 +166,16 @@ LOGGING = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-HOST = env.url("DJANGO_HOST_URL", default='corelli.sytes.net')
-print('===============>', HOST)
+HOST = env.url("DJANGO_HOST_URL", default='corellionlineproject.org')
+
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=[HOST.netloc])
 
+logger.info(f'HOST.netloc = {HOST.netloc}')
+logger.info(f'HOST.path = {HOST.path}')
+
 CORELLI_SFTP_SERVER_URL = 'corelli.myftp.org'
 SERVER_URL = f'{HOST.scheme}://{HOST.netloc}'
+
+logger.info(f'SERVER_URL = {SERVER_URL}')

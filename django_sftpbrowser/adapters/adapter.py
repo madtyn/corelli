@@ -1,6 +1,9 @@
+import logging
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
 from allauth.account.adapter import DefaultAccountAdapter
+
+logger = logging.getLogger(__name__)
 
 
 class DjangoSftpAdapter(DefaultAccountAdapter):
@@ -19,6 +22,8 @@ class DjangoSftpAdapter(DefaultAccountAdapter):
             email_template = 'account/email/email_confirmation_signup'
         else:
             email_template = 'account/email/email_confirmation'
+
+        logger.info('Sending confirmation mail to %s', settings.ADMIN_EMAIL_ADDRESS)
         self.send_mail(email_template,
                        settings.ADMIN_EMAIL_ADDRESS,
                        ctx)
@@ -30,6 +35,7 @@ class DjangoSftpAdapter(DefaultAccountAdapter):
         email_address.verified = True
         email_address.set_as_primary(conditional=True)
         email_address.save()
+        logger.info('Sending account created confirmation mail to %s', email_address.email)
         self.send_mail('account/email/account_activated',
                        email_address.email,
                        {'email': email_address.email})
